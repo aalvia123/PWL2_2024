@@ -30,26 +30,27 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return 'ALVIA NIM 2341728011';
+    return 'NAMA : ALVIA <br> NIM : 2341728011';
 });
 
 Route::get('/user/{name}', function ($name) {
     return 'Nama Saya ' . $name;
 });
 
+
 Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
     return 'Pos ke-' . $postId . " Komentar ke-: " . $commentId;
 });
 
-Route::get('/Id/{Id}/comments/{comment}', function ($Id, $commentId) {
-    return ' Halaman Artikel ' . $Id . " Dengan ID : " . $commentId;
+Route::get('/articles/{id}', function ($Id) {
+    return ' Halaman Artikel dengan ID ' . $Id;
 });
 
-
-Route::get('/user/{name?}', function ($name = 'john') {
+Route::get('/user/{name?}', function ($name = null) {
     return 'Nama saya ' . $name;
 });
 
-Route::get('/user/profile', function () {
-    //
-})->name('profile');
+
+Route::get('/user/{name?}', function ($name = 'John') {
+    return 'Nama saya ' . $name;
+});
